@@ -8,7 +8,7 @@ class ProductCreateDtoSchema(Schema):
 
 
 class ProductSchema(Schema):
-    # id = fields.String(required=True)
+    id = fields.String(required=True)
     name = fields.String(required=True)
     price = fields.Float(required=True)
 

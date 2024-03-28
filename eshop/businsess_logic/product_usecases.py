@@ -2,7 +2,7 @@ import uuid
 from typing import Optional, List
 
 # from eshop.businsess_logic import product
-from eshop.data_access.product_repo import product_List, save
+from eshop.data_access.product_repo import product_List, save, get_by_id
 
 from eshop.businsess_logic.product import Product
 from eshop.view.product_schemas import ProductCreateDtoSchema
@@ -12,8 +12,8 @@ def product_create(product: ProductCreateDtoSchema) -> Product:
     print(product)
     new_product = Product(
         id=str(uuid.uuid4()),
-        name=product.name,
-        price=product.price
+        name=product['name'],
+        price=product['price'],
     )
 
     for i in range(len(product_List)):
@@ -29,7 +29,7 @@ def product_create(product: ProductCreateDtoSchema) -> Product:
 
 
 def product_get_by_id(id: str) -> Optional[Product]:
-    raise Exception('Not implemented yet')
+    return get_by_id(id)
 
 
 def product_get_many(page: int, limit: int) -> List[Product]:

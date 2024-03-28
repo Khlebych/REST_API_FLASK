@@ -30,8 +30,6 @@ def product_create_endpoint():
 
 @app.get("/api/v1/product")     # получение страницы продуктов
 def get_all_product():
-    # limit = request.args.get('limit')
-    # page = request.args.get('page')
     return get_many()
 
 
