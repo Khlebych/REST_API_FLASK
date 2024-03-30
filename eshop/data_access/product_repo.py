@@ -40,7 +40,5 @@ def get_by_id(id: str) -> Optional[Product]:
     return next((p for p in product_List if p.id == id), None)
 
 
-def get_many(page: int = 0, limit: int = 10):
-    start = page * limit
-    end = start + limit
-    return product_List[start:end]
+def get_many():
+    return product_List

@@ -1,9 +1,6 @@
 import uuid
-from typing import Optional, List
-
-# from eshop.businsess_logic import product
+from typing import Optional
 from eshop.data_access.product_repo import product_List, save, get_by_id
-
 from eshop.businsess_logic.product import Product
 from eshop.view.product_schemas import ProductCreateDtoSchema
 
@@ -29,8 +26,12 @@ def product_create(product: ProductCreateDtoSchema) -> Product:
 
 
 def product_get_by_id(id: str) -> Optional[Product]:
+    """
+
+    :rtype: object
+    """
     return get_by_id(id)
 
 
-def product_get_many(page: int, limit: int) -> List[Product]:
-    raise Exception('Not implemented yet')
+# def product_get_many(page: int, limit: int) -> List[Product]:
+#     raise Exception('Not implemented yet')

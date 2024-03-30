@@ -8,8 +8,8 @@ from eshop.data_access.product_repo import get_by_id as product_get_by_id
 
 def order_create(product_ids: List[str]):
     products = []
-    for id in product_ids:
-        product = product_get_by_id(id)
+    for i in product_ids:
+        product = product_get_by_id(i)
         if product is None:
             raise Exception(f'Could not create order: Product with id {id} not exists')
 

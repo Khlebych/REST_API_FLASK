@@ -4,7 +4,7 @@ from marshmallow import ValidationError
 from eshop.businsess_logic.order_usecases import order_create, order_get_many, order_get_by_id
 from eshop.businsess_logic.product_usecases import product_create, product_get_by_id
 from eshop.view.order_schemas import OrderCreateDtoSchema, OrderSchema, OrderGetManyParams
-from eshop.data_access.product_repo import save, get_many
+from eshop.data_access.product_repo import get_many
 from eshop.view.product_schemas import ProductCreateDtoSchema, ProductSchema
 
 app = Flask(__name__)
@@ -33,9 +33,9 @@ def get_all_product():
     return get_many()
 
 
-@app.get("/api/v1/product/<id>")    # получение продукта по его ID
-def product_get_by_id_endpoint(id):
-    product = product_get_by_id(id)
+@app.get("/api/v1/product/<_id>")    # получение продукта по его ID
+def product_get_by_id_endpoint(_id):
+    product = product_get_by_id(_id)
 
     if product is None:
         return {
@@ -79,9 +79,9 @@ def order_get_many_endpoint():
     return OrderSchema(many=True).dump(order)
 
 
-@app.get("/api/v1/order/<id>")
-def order_get_by_id_endpoint(id):
-    order = order_get_by_id(id)
+@app.get("/api/v1/order/<_id>")
+def order_get_by_id_endpoint(_id):
+    order = order_get_by_id(_id)
 
     if order is None:
         return {
