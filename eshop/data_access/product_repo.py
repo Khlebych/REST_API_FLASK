@@ -31,12 +31,12 @@ def save(product: Product):
         product_List.append(product)
 
 
-def delete_by_id(id: str):
+def delete_by_id(_id: str):
     global product_List
     product_List = [p for p in product_List if p.id != id]
 
 
-def get_by_id(id: str) -> Optional[Product]:
+def get_by_id(_id: str) -> Optional[Product]:
     return next((p for p in product_List if p.id == id), None)
 
 

@@ -25,12 +25,8 @@ def product_create(product: ProductCreateDtoSchema) -> Product:
     return new_product
 
 
-def product_get_by_id(id: str) -> Optional[Product]:
-    """
-
-    :rtype: object
-    """
-    return get_by_id(id)
+def product_get_by_id(_id: str) -> Optional[Product]:
+    return get_by_id(_id)
 
 
 # def product_get_many(page: int, limit: int) -> List[Product]:
