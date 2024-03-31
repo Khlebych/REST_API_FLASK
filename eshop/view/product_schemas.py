@@ -12,6 +12,6 @@ class ProductSchema(Schema):
     price = fields.Float(required=True)
 
 
-# class ProductGetManyParams(Schema):
-#     page = fields.Int(required=True)
-#     limit = fields.Int(required=True)
+class ProductGetManyParams(Schema):
+    page = fields.Int(required=True)
+    limit = fields.Int(required=True)
